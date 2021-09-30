@@ -10,7 +10,6 @@ public class Array{
 		array=new int[100]; //length of array = 100
 		size=0;
 	}
-
 	//function to get values from the user.
 	static public void getValues(){
 		Scanner input = new Scanner(System.in);
@@ -90,7 +89,7 @@ public class Array{
 	}
 	
 	//main function
-	public static void main(String [] args){
+	/*public static void main(String [] args){
 		Array array = new Array(); //create an array.
 		array.getValues(); //get values from the user.
 		array.display();   //display the array.
@@ -107,7 +106,7 @@ public class Array{
 		array.display();   //display the array.
 
 		System.out.println(array.binarySearch(56,0,size)); //search for num=56 using Binary Search.
-	}
+	}*/
 }
 	
 			

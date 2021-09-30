@@ -30,14 +30,14 @@ public class ArrayDeletion{
 	}
 
 	//main function
-	public static void main(String [] args){
+	/*public static void main(String [] args){
 		int [] array = {1,6,34,0,2,43};
 		System.out.println("Before Deletion : ");
 		display(array);
 		array = delete(array,3);
 		System.out.println("After Deletion of 3rd element : ");
 		display(array);
-	}
+	}*/
 }
 	
 		

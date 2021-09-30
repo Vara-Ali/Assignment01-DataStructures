@@ -1,4 +1,4 @@
-package Queue;
+ package Queue;
 //Program to implement Queue fusing LinkedList.
 public class Queue{
 	//class for elements.
@@ -11,6 +11,7 @@ public class Queue{
 			this.next=null;
 		}
 	}
+	
 	
 	static int size;   //number of elements in the queue.
 	static Node head;  //head of the queue i.e first element.
@@ -51,6 +52,7 @@ public class Queue{
 		int temp = head.key;
 		head=head.next;
 		size--;
+		System.out.println(temp);
 		return temp;
 	}
 		
@@ -70,7 +72,7 @@ public class Queue{
 	}
 	
 	//main function to run the program.
-	static public void main(String [] args){
+	/*static public void main(String [] args){
 		Queue queue = new Queue();
 		queue.enqueue(10);
 		queue.enqueue(20);
@@ -94,7 +96,7 @@ public class Queue{
 		queue.dequeue();
 		
 		queue.display();
-	}
+	}*/
 }
 	
 		

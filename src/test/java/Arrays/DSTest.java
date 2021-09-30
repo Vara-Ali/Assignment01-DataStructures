@@ -1,6 +1,7 @@
 package Arrays;
 
 import static org.junit.Assert.*;
+import org.junit.After;
 import org.junit.Before;
 
 import org.junit.Test;
@@ -10,6 +11,7 @@ public class DSTest
 
 	//private SavingsAccount ZakatunderTest;
 	private Array Arr;
+	private ArrayDeletion ArrDel;
 	//private int //arr1s[];
 	
 
@@ -18,22 +20,32 @@ public class DSTest
 	{
 		//ZakatunderTest = new SavingsAccount();
 		Arr = new Array();	
-		Array.insert(0, 0);
-		Array.insert(1, 1);
-		Array.insert(2, 2);
-		Array.display();
+		ArrDel = new ArrayDeletion();
+		Arr.insert(8, 0);
+		Arr.insert(2, 1);
+		Arr.insert(7, 2);
+		Arr.insert(9, 3);
+		Arr.insert(2, 4);
+		Arr.insert(5, 5);
+		Arr.insert(0, 6);
+		
+		//Arr.getValues();
+		Arr.display();
 		//arr1s = Array.array;
+		
+		//Arr.getValues();
+		Arr.display();
 	}
 	
 	@Test
-	//Array Deletion
+	//Array Deletion ---> ArrayDeletion.java
 	public void testdelete() 
 	{	
 		assertArrayEquals(new int[] {1,6,34,2,43,-1},ArrayDeletion.delete(new int[] {1,6,34,0,2,43},3));
 	}
 	
 	@Test
-	//Array Insertion
+	//Array Insertion ---------> ArrayInsertion.java
 	public void testinsert() 
 	{	
 		assertArrayEquals(new int[] {0,1,34,0,2,43},ArrayInsertion.insert(new int[] {1,6,34,0,2,43}, 0, 0));
@@ -44,38 +56,67 @@ public class DSTest
 	public void testinsert2() 
 	{
 		int arrResult [] = {0,1,2};
-		assertEquals(arrResult,Array.array);
+		assertEquals(arrResult,Arr.array);
 		
 		//assertArrayEquals(new int[] {0,1,2},Array.array);
 	
-	}*/
-	
+	}
+	*/
 	@Test
-	//Array linear Search
+	//Array linear Search -----> Array.java
 	public void testlinearSearch() 
 	{	
 		//assertArrayEquals(new int[] {0,1,34,0,2,43},ArrayInsertion.insert(new int[] {1,6,34,0,2,43}, 0, 0));
-		boolean arrT = Array.linearSearch(0);
+		boolean arrT = Arr.linearSearch(0);
 		assertTrue(arrT);
 	}
 	
 	@Test
-	//Array binary Search
+	//Array binary Search -----> Array.java
 	public void testbinarySearch() 
 	{	
 		//assertArrayEquals(new int[] {0,1,34,0,2,43},ArrayInsertion.insert(new int[] {1,6,34,0,2,43}, 0, 0));
-		boolean arrT = Array.binarySearch(2, 0, 2);
+		boolean arrT = Arr.binarySearch(2, 0, 9);
 		assertTrue(arrT);
 	}
 	
 	@Test
+	//Array binary Search -----> Array.java
+	public void testbinarySearchF() 
+	{	
+		//assertArrayEquals(new int[] {0,1,34,0,2,43},ArrayInsertion.insert(new int[] {1,6,34,0,2,43}, 0, 0));
+		boolean arrF = Arr.binarySearch(12, 0, 9);
+		assertFalse(arrF);
+	}
+	
+	/*@Test
 	//Array Insertion
 	public void testbubbleSort() 
 	{	
+		Arr.delete(0);
+		//Arr.getValues();
 		Arr.bubbleSort();
 		int arrResult [] = {0,1,2};
 		int arrExpected [] = Arr.array;
 		assertArrayEquals(arrResult,arrExpected);
+	}*/
+	
+	//
+	@After
+	public void afterTest()
+	{
+		///-----> Array.java
+		Arr.delete(0);
+		Arr.bubbleSort();
+		Arr.display();
+		
+		
+		///-----> ArrayDeletion.java
+		ArrDel.display(new int[] {1,6,34,2,43,-1});
+		
+		//Arr.getValues();
+		Arr.display();
+		
 	}
 	
 	
