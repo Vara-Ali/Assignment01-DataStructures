@@ -44,7 +44,7 @@ public class QueueTest {
 		c1.enqueue(0);
 		c1.enqueue(5);
 		c1.enqueue(3);
-		c1.enqueue(9);
+		c1.dequeue();
 		
 		qa1 = new QueueUsingArray(8);
 		qa1.enqueue(9);
@@ -76,6 +76,7 @@ public class QueueTest {
 	public void testdisplay() 
 	{	
 		int [] expected = d1.array;
+		d1.display();
 		assertArrayEquals(new int[]  {8,5,7,0,0,2,1,6},expected );
 		//fail("Not yet implemented");
 	}

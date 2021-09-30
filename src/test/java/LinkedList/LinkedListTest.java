@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,6 +14,7 @@ public class LinkedListTest
 	private LinkedList list;
 	private LinkedListImp l1;
 	private LinkedListSwapNodes ls1;
+	private CircularLinkedList CircL;
 	
 	
 	//https://stackoverflow.com/questions/1119385/junit-test-for-system-out-println
@@ -33,6 +35,16 @@ public class LinkedListTest
 	{
 		l1 = new LinkedListImp();
 		ls1 = new LinkedListSwapNodes();
+		list = new LinkedList();
+		CircL = new CircularLinkedList();
+		
+		list.pushBack(6);
+		list.pushBack(9);
+		list.popBack(); 
+		
+		CircL.pushFront(4);
+		CircL.pushBack(3);
+		CircL.popFront();
 		//l1.pushBack(7);
 	}
 
@@ -193,6 +205,144 @@ public class LinkedListTest
 	
 ////////////---------------->>>>>>>>>>>>>>>>>>.LinkedList.java <<<<<<<<<<<<<<<<<<--------------------------------//////
 	
+	//pushFront -->>> LinkedListSwapNodes.java
+	@Test
+	public void testpushFrontLL1() 
+	{
+		setUpStreams();
+		list.pushFront(8);
+		assertEquals("Inserting node at front : 8" , outContent.toString().trim().replace("\r",""));
+	}
+	
+	
+	
+	//pushFrontF -->>> LinkedListSwapNodes.java
+	@Test
+	public void testpushFrontLL1F() 
+	{
+		setUpStreams();
+		list.pushFront(5);
+		assertNotEquals("Inserting node at front : 8" , outContent.toString().trim().replace("\r",""));
+	}
+	
+	
+	//pushBack -->>> LinkedListSwapNodes.java
+	@Test
+	public void testpushBackLL1() 
+	{
+		setUpStreams();
+		list.pushBack(0);
+		assertEquals("Inserting node at back  : 0" , outContent.toString().trim().replace("\r",""));
+	}
+	
+	
+	//pushBack -->>> LinkedListSwapNodes.java
+	@Test
+	public void testpushBackLL1F() 
+	{
+		setUpStreams();
+		list.pushBack(11);
+		assertNotEquals("Inserting node at back  : 10" , outContent.toString().trim().replace("\r",""));
+	}
+	
+	
+	//popFront -->>> LinkedListSwapNodes.java
+	@Test
+	public void testpopFrontLL1() 
+	{
+		setUpStreams();
+		list.popFront();
+		assertEquals("PopFront Operation." , outContent.toString().trim().replace("\r",""));
+	}
+	
+	
+	//popBack -->>> LinkedListSwapNodes.java
+	@Test
+	public void testpopBackLL1() 
+	{
+		setUpStreams();
+		list.popBack();
+		assertEquals("PopBack Operation." , outContent.toString().trim().replace("\r",""));
+	}
+	
+	
+	//pop -->>> LinkedListSwapNodes.java
+	@Test
+	public void testpopLL1() 
+	{
+		setUpStreams();
+		list.pop(7);
+		assertEquals("Poping element at pos : 7" , outContent.toString().trim().replace("\r",""));
+	}
+	
+	
+	//display -->>> LinkedListSwapNodes.java
+	@Test
+	public void testdisplayLL1() 
+	{
+		setUpStreams();
+		list.display();
+	}
+
+	
+////////////---------------->>>>>>>>>>>>>>>>>>.CircularLinkedList.java <<<<<<<<<<<<<<<<<<--------------------------------//////
+	
+		
+
+	//pushFront -->>> CircularLinkedList.java
+	@Test
+	public void testpushFrontCircL() 
+	{
+		setUpStreams();
+		CircL.pushFront(6);
+		assertEquals("Inserting data at front : 6" , outContent.toString().trim().replace("\r",""));
+	}
+	
+	
+	//pushBack -->>> CircularLinkedList.java
+	@Test
+	public void testpushBackCircL() 
+	{
+		setUpStreams();
+		CircL.pushBack(7);
+		assertEquals("Inserting data at back  : 7" , outContent.toString().trim().replace("\r",""));
+	}
+	
+	
+	//popFront -->>> CircularLinkedList.java
+	@Test
+	public void testpopFrontCircL() 
+	{
+		setUpStreams();
+		CircL.popFront();
+		//assertEquals("PopFront Operation : " , outContent.toString().trim().replace("\r",""));
+	}
+	
+	
+	//popBack -->>> CircularLinkedList.java
+	@Test
+	public void testpopBackCircL() 
+	{
+		setUpStreams();
+		CircL.popBack();
+		//assertEquals("PopFront Operation : " , outContent.toString().trim().replace("\r",""));
+	}
+	
+	//display -->>> CircularLinkedList.java
+	@Test
+	public void testdisplayCircL() 
+	{
+		setUpStreams();
+		CircL.display();
+		//assertEquals("PopFront Operation : " , outContent.toString().trim().replace("\r",""));
+	}
+	
+	@After
+	public void tearDown() throws Exception 
+	{
+		ls1.swap();
+		ls1.display();
+	}
 	
 	
 

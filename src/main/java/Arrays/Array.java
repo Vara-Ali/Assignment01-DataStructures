@@ -11,7 +11,7 @@ public class Array{
 		size=0;
 	}
 	//function to get values from the user.
-	static public void getValues(){
+	/*static public void getValues(){
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter the number of values to insert:");
 		int numofElem = input.nextInt(); //number of elements to insert.
@@ -19,7 +19,7 @@ public class Array{
 			System.out.println("Enter the num"+i+":");
 			insert(input.nextInt(),i);
 		}
-	} 
+	} */
 	
 	//function to insert elements in the array.
 	static public void insert(int number,int position){

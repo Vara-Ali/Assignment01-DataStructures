@@ -12,6 +12,7 @@ public class DSTest
 	//private SavingsAccount ZakatunderTest;
 	private Array Arr;
 	private ArrayDeletion ArrDel;
+	private ArrayInsertion ArrIns;
 	//private int //arr1s[];
 	
 
@@ -35,6 +36,8 @@ public class DSTest
 		
 		//Arr.getValues();
 		Arr.display();
+		
+		ArrIns = new ArrayInsertion();
 	}
 	
 	@Test
@@ -66,16 +69,22 @@ public class DSTest
 	//Array linear Search -----> Array.java
 	public void testlinearSearch() 
 	{	
-		//assertArrayEquals(new int[] {0,1,34,0,2,43},ArrayInsertion.insert(new int[] {1,6,34,0,2,43}, 0, 0));
 		boolean arrT = Arr.linearSearch(0);
 		assertTrue(arrT);
+	}
+	
+	@Test
+	//Array linear Search -----> Array.java
+	public void testlinearSearchF() 
+	{	
+		boolean arrT = Arr.linearSearch(15);
+		assertFalse(arrT);
 	}
 	
 	@Test
 	//Array binary Search -----> Array.java
 	public void testbinarySearch() 
 	{	
-		//assertArrayEquals(new int[] {0,1,34,0,2,43},ArrayInsertion.insert(new int[] {1,6,34,0,2,43}, 0, 0));
 		boolean arrT = Arr.binarySearch(2, 0, 9);
 		assertTrue(arrT);
 	}
@@ -84,7 +93,6 @@ public class DSTest
 	//Array binary Search -----> Array.java
 	public void testbinarySearchF() 
 	{	
-		//assertArrayEquals(new int[] {0,1,34,0,2,43},ArrayInsertion.insert(new int[] {1,6,34,0,2,43}, 0, 0));
 		boolean arrF = Arr.binarySearch(12, 0, 9);
 		assertFalse(arrF);
 	}

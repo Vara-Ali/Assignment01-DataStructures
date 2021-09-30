@@ -69,7 +69,6 @@ public class CircularQueueUsingArray{
 			return;
 		}
 		
-		System.out.print("Queue!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! : ") ;
 		for(int i=removePointer;i<size+removePointer;i++){
 			System.out.print(array[i] + " ");
 		}
